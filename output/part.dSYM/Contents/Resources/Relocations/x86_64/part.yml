@@ -1,0 +1,10 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/vkb/Documents/coding/cs/22BCE3296/output/part'
+relocations:
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _firstFit, symObjAddr: 0x0, symBinAddr: 0x1000006A0, symSize: 0x190 }
+  - { offset: 0x41, size: 0x8, addend: 0x0, symName: _firstFit, symObjAddr: 0x0, symBinAddr: 0x1000006A0, symSize: 0x190 }
+  - { offset: 0x113, size: 0x8, addend: 0x0, symName: _bestFit, symObjAddr: 0x190, symBinAddr: 0x100000830, symSize: 0x1D0 }
+  - { offset: 0x202, size: 0x8, addend: 0x0, symName: _worstFit, symObjAddr: 0x360, symBinAddr: 0x100000A00, symSize: 0x1D0 }
+  - { offset: 0x2F1, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x530, symBinAddr: 0x100000BD0, symSize: 0x257 }
+...
