@@ -6,7 +6,6 @@ struct Process{
 };
 
 int main(){
-    printf("Name: Kameshvar Balan V\nRegNo: 22BCE3296\n\n");
     printf("Enter number of processes: ");
     int n;
     scanf("%d", &n);

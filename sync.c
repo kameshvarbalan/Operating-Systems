@@ -24,7 +24,6 @@ void* threadFunction(void* arg){
 }
 
 int main(){
-    printf("Name: Kameshvar Balan V\nRegNo: 22BCE3296\n\n");
     int numThreads;
     srand(time(NULL));
     printf("Enter the number of threads: ");

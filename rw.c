@@ -38,7 +38,6 @@ void* writer(void* arg) {
 }
 
 int main(){
-    printf("Name: Kameshvar Balan V\nRegNo: 22BCE3296\n\n");
     pthread_t r_threads[5], w_threads[5];
     int r_ids[5], w_ids[5];
     sem_init(&mutex, 0, 1);

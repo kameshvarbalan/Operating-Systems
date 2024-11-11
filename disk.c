@@ -236,7 +236,6 @@ void CLOOK(int requests[], int n, int head, int direction){
 }
 
 int main(){
-    printf("Name: Kameshvar Balan V\nRegNo: 22BCE3296\n\n");
     int n, head, disk_size, direction;
     printf("Enter the initial head position: ");
     scanf("%d", &head);

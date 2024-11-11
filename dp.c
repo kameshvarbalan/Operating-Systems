@@ -50,7 +50,6 @@ void* philosopher(void* num) {
 }
 
 int main(){
-    printf("Name: Kameshvar Balan V\nRegNo: 22BCE3296\n\n");
     printf("Enter the number of philosophers: ");
     scanf("%d", &num_philosophers);
     for(int i=0; i<num_philosophers; i++){

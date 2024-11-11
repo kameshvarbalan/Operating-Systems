@@ -82,7 +82,6 @@ void worstFit(int blockSize[], int m, int processSize[], int n){
 }
 
 int main(){
-    printf("Name: Kameshvar Balan V\nRegNo: 22BCE3296\n\n");
     int m, n;
     printf("Enter the number of memory blocks: ");
     scanf("%d", &m);

@@ -6,7 +6,6 @@
 #define MSG_SIZE 100
 
 int main(){
-    printf("Name: Kameshvar Balan V\nRegNo: 22BCE3296\n\n");
     int fd[2];
     pid_t pid;
     char write_msg[MSG_SIZE];

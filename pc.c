@@ -59,7 +59,6 @@ void* consumer(void* arg){
 }
 
 int main(){
-    printf("Name: Kameshvar Balan V\nRegNo: 22BCE3296\n\n");
     pthread_t prod_thread, cons_thread;
     printf("Enter the buffer size: ");
     scanf("%d", &buffer_size);

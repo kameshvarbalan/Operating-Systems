@@ -87,7 +87,6 @@ void worstFit(int partitions[], int partitionSize, int processes[], int processS
 }
 
 int main(){
-    printf("Name: Kameshvar Balan V\nRegNo: 22BCE3296\n\n");
     int partitions[MAX_PARTITIONS], processes[MAX_PROCESSES];
     int partitionSize, processSize;
     printf("Enter the number of partitions: ");

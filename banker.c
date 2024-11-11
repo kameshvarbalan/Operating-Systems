@@ -55,7 +55,6 @@ void deadlock(int processes[], int avail[], int max[][10], int alloc[][10], int 
 }
 
 int main(){
-    printf("Name: Kameshvar Balan V\nRegNo: 22BCE3296\n\n");
     int n, m;
     printf("Enter the number of processes: ");
     scanf("%d", &n);
