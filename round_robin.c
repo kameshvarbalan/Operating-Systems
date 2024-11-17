@@ -62,55 +62,53 @@ int main(){
     for(int i=0; i<n; i++){
         if(processes[i].at<=time){
             enqueue(queue, i);
-            printf("%d ", i+1);
             processes[i].q = true;
         }
     }
-    int curr_process;
     while(completed<n){
-        curr_process = dequeue(queue);
-        if(curr_process==-1){
+        int current = dequeue(queue);
+        if(current==-1){
             time++;
             for(int i=0; i<n; i++){
                 if(processes[i].at<=time && processes[i].rt>0 && !processes[i].q){
                     enqueue(queue, i);
-                    printf("%d ", i+1);
                     processes[i].q = true;
                 }
             }
             continue;
         }
-        if(processes[curr_process].bt == processes[curr_process].rt){
-            processes[curr_process].st = time;
+        if(processes[current].bt==processes[current].rt){
+            processes[current].st = time;
         }
-        if(processes[curr_process].rt <= quantum){
-            time += processes[curr_process].rt;
-            processes[curr_process].rt = 0;
-            processes[curr_process].ct = time;
-            processes[curr_process].tat = processes[curr_process].ct - processes[curr_process].at;
-            processes[curr_process].wt = processes[curr_process].tat - processes[curr_process].bt;
+        if(processes[current].rt<=quantum){
+            processes[current].ct = time+processes[current].rt;
+            processes[current].rt = 0;
+            processes[current].tat = processes[current].ct - processes[current].at;
+            processes[current].wt = processes[current].tat - processes[current].bt;
+            processes[current].q = false;
+            for(int k=time+1; k<=processes[current].ct; k++){
+                for(int i=0; i<n; i++){
+                    if(processes[i].at<=k && processes[i].rt>0 && !processes[i].q){
+                        enqueue(queue, i);
+                        processes[i].q = true;
+                    }
+                }
+            }
+            time = processes[current].ct;
             completed++;
-            processes[curr_process].q = false;
-            for(int i=0; i<n; i++){
-                if(processes[i].at<=time && processes[i].rt>0 && !processes[i].q){
-                    enqueue(queue, i);
-                    printf("%d ", i+1);
-                    processes[i].q = true;
-                }
-            }
-        } 
+        }
         else{
-            time += quantum;
-            processes[curr_process].rt -= quantum;
-            for(int i=0; i<n; i++){
-                if(processes[i].at<=time && processes[i].rt>0 && !processes[i].q){
-                    enqueue(queue, i);
-                    printf("%d ", i+1);
-                    processes[i].q = true;
+            processes[current].rt -= quantum;
+            for(int k=time+1; k<=time+quantum; k++){
+                for(int i=0; i<n; i++){
+                    if(processes[i].at<=k && processes[i].rt>0 && !processes[i].q){
+                        enqueue(queue, i);
+                        processes[i].q = true;
+                    }
                 }
             }
-            enqueue(queue, curr_process);
-            printf("%d ", curr_process);
+            time += quantum;
+            enqueue(queue, current);
         }
     }
     int wt = 0, tat = 0; 
